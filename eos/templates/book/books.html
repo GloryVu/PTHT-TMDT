@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>List book</h1>
+  <table>
+    <tr>
+      <th>ISBN</th>
+      <th>Title</th>
+      <th>Summary</th>
+      <th>Number Of Page</th>
+      <th>Language</th>
+      <th>Image</th>
+    </tr>
+    {% for b in books %}
+    <tr>
+      <th> {{ b.ISBN }}</th>
+      <th> {{ b.title }}</th>
+      <th> {{ b.summary }}</th>
+      <th> {{ b.numberOfPage }}</th>
+      <th> {{ b.language }}</th>
+      <th> {{ b.image }}</th>
+    </tr> 
+    {% endfor %}
+    </table>
+{% endblock %}

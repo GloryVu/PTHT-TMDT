@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>List Authors</h1>
+  <a href="createAuthor" >Create an Author</a>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Biography</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for a in authors %}
+    <tr>
+      <td> {{ a.id }}</td>
+      <td> {{ a.name }}</td>
+      <td> {{ a.biography }}</td>
+      <td><a href="updateAuthor/{{a.id}}">update</a></td>
+      <td><a href="deleteAuthor/{{a.id}}">delete</a></td>
+    </tr> 
+    {% endfor %}
+    </table>
+{% endblock %}
